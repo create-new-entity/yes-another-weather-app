@@ -1,4 +1,4 @@
-name: Weather Atlas CI/CD
+name: Aether CI/CD
 
 on:
   push:

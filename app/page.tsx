@@ -10,7 +10,7 @@ export default function Home() {
         <header className="flex items-center justify-between gap-3">
           <Link
             href="/"
-            aria-label="Weather Atlas home"
+            aria-label="Aether home"
             className="inline-flex min-w-0 items-center gap-2 rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground sm:gap-2.5"
           >
             <CloudSun
@@ -21,7 +21,7 @@ export default function Home() {
             />
 
             <span className="truncate text-base font-semibold tracking-tight sm:text-xl">
-              Weather Atlas
+              Aether
             </span>
           </Link>
 
