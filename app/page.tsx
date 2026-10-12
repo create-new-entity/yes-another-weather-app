@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import { CloudSun, Search, Globe } from "lucide-react";
 
 import ThemeSelector from "./components/ThemeSelector";
+import useTabTitle from "./hooks/useTabTitle";
 
 export default function Home() {
+  useTabTitle();
   return (
     <main className="min-h-screen bg-background text-foreground">
       <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 py-8 sm:px-10 sm:py-10 lg:px-12">
