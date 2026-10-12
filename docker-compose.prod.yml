@@ -1,0 +1,7 @@
+services:
+    weather-atlas:
+        image: imranpavel/weather-atlas:latest
+        container_name: weather-atlas
+        ports:
+            - "127.0.0.1:3003:3000"
+        restart: unless-stopped
