@@ -33,21 +33,32 @@ export default function Home() {
       return;
     }
 
+    let ignore = false;
+
     const timeoutId = setTimeout(async () => {
       try {
         const locations = await searchLocations(normalizedQuery);
 
+        if (ignore) return;
+
         setResults(locations.slice(0, MAX_RESULTS));
         setHasSearched(true);
       } catch {
+        if (ignore) return;
+
         setResults([]);
         setError("Couldn't search locations. Please try again.");
       } finally {
-        setIsLoading(false);
+        if (!ignore) {
+          setIsLoading(false);
+        }
       }
     }, DEBOUNCE_MS);
 
-    return () => clearTimeout(timeoutId);
+    return () => {
+      ignore = true;
+      clearTimeout(timeoutId);
+    };
   }, [normalizedQuery, selectedLocation]);
 
   function handleQueryChange(value: string) {
