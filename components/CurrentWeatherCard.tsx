@@ -1,6 +1,6 @@
 import { Droplets, Wind, Sunrise, Sunset, Thermometer } from "lucide-react";
 
-import WeatherIcon from "@/app/components/WeatherIcon";
+import WeatherIcon from "@/components/WeatherIcon";
 import type { CurrentWeather } from "@/types/weather";
 
 type CurrentWeatherCardProps = {

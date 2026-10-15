@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { CloudSun, Globe } from "lucide-react";
+import { Globe } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-import ThemeSelector from "./components/ThemeSelector";
 import useTabTitle from "./hooks/useTabTitle";
-import LocationSearch from "./components/location-search";
+import LocationSearch from "../components/location-search";
 
 import { searchLocations } from "@/lib/locations";
 import type { LocationResult } from "@/types/location";
@@ -100,6 +98,11 @@ export default function Home() {
     setIsLoading(false);
   }
 
+  function handleGlobeNavigation() {
+    handleClear();
+    router.push("/globe");
+  }
+
   return (
     <main className="min-h-screen bg-background text-foreground">
       <section className="mx-auto flex w-full max-w-5xl flex-col items-center px-6 pb-16 pt-16 sm:pt-24">
@@ -129,6 +132,7 @@ export default function Home() {
             <button
               type="button"
               aria-label="Select location on globe"
+              onClick={handleGlobeNavigation}
               className="shrink-0 rounded-2xl border border-border bg-card p-3 text-muted-foreground transition-colors hover:bg-background hover:text-foreground"
             >
               <Globe size={20} aria-hidden="true" />

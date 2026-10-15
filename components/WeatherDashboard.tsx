@@ -3,12 +3,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import CurrentWeatherCard from "@/app/components/CurrentWeatherCard";
-import ForecastSection from "@/app/components/ForecastSection";
+import CurrentWeatherCard from "@/components/CurrentWeatherCard";
+import ForecastSection from "@/components/ForecastSection";
 import {
   WeatherErrorState,
   WeatherLoadingSkeleton,
-} from "@/app/components/WeatherDashboardStates";
+} from "@/components/WeatherDashboardStates";
 import { getWeather } from "@/lib/weather";
 import type { WeatherData } from "@/types/weather";
 

@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 
-import WeatherDashboard from "../components/WeatherDashboard";
-import { WeatherLoadingSkeleton } from "../components/WeatherDashboardStates";
+import WeatherDashboard from "../../components/WeatherDashboard";
+import { WeatherLoadingSkeleton } from "../../components/WeatherDashboardStates";
 
 export const metadata: Metadata = {
   title: "Dashboard | Aether",

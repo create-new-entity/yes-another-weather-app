@@ -1,5 +1,5 @@
 import type { DailyForecast } from "@/types/weather";
-import WeatherIcon from "@/app/components/WeatherIcon";
+import WeatherIcon from "@/components/WeatherIcon";
 
 type ForecastSectionProps = {
   forecast: DailyForecast[];
