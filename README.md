@@ -8,7 +8,7 @@ A playful weather app featuring location search, current weather, forecasts, and
 
 - [How to use](#how-to-use) ❓
 - [Tech Stack](#tech-stack) 🛠️
-- [Live Demo](#demo) 🏁
+- [Live Demo](#live-demo) 🏁
 - [Demo GIFs](#demo-gifs) 📸
 - [Disclaimer](#disclaimer-) 🚨
 
