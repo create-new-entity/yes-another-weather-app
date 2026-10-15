@@ -119,15 +119,6 @@ export default function GlobePicker() {
     if (!start || start.pointerId !== event.pointerId) return;
     if (event.button !== 0) return;
 
-    const distance = Math.hypot(
-      event.clientX - start.x,
-      event.clientY - start.y,
-    );
-
-    // Both a click and a drag-release select using the release position.
-    // The globe library continues to handle the rotation itself.
-    if (distance < 0) return;
-
     const container = containerRef.current;
     const globe = globeRef.current;
     const canvas = container?.querySelector("canvas");
