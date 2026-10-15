@@ -39,7 +39,7 @@ A playful weather app featuring location search, current weather, forecasts, and
 
 ## Disclaimer 🚨
 
-**This project is AI slop.** I chatted with AI, copy-pasted code, and here we are.
+**This project is an AI slop.** I chatted with AI, copy-pasted code, and here we are.
 
 It's a playful experiment, not a demonstration of clean code, good architecture, or Next.js/Tailwind CSS expertise. Just having fun with AI.
 
