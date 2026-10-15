@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, X } from "lucide-react";
+import { Search } from "lucide-react";
 
 import { getCountryFlag } from "@/lib/locations";
 import type { LocationResult } from "@/types/location";
@@ -21,7 +21,6 @@ export default function LocationSearch({
   results,
   selectedLocation,
   onSelect,
-  onClear,
   isLoading,
 }: LocationSearchProps) {
   const isOpen =
@@ -54,17 +53,6 @@ export default function LocationSearch({
           autoComplete="off"
           className="w-full min-w-0 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground sm:text-base"
         />
-
-        {selectedLocation && (
-          <button
-            type="button"
-            onClick={onClear}
-            aria-label="Clear selected location"
-            className="shrink-0 rounded-full p-1 text-muted-foreground transition-colors hover:bg-background hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
-          >
-            <X size={18} strokeWidth={1.8} aria-hidden="true" />
-          </button>
-        )}
       </div>
 
       {isOpen && (

@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { CloudSun, Search, Globe } from "lucide-react";
+import { CloudSun, Globe } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 import ThemeSelector from "./components/ThemeSelector";
 import useTabTitle from "./hooks/useTabTitle";
@@ -17,6 +18,8 @@ const DEBOUNCE_MS = 300;
 
 export default function Home() {
   useTabTitle();
+
+  const router = useRouter();
 
   const [query, setQuery] = useState("");
   const [selectedLocation, setSelectedLocation] =
@@ -72,11 +75,20 @@ export default function Home() {
 
   function handleSelect(location: LocationResult) {
     setSelectedLocation(location);
-    setQuery(location.name);
+    setQuery("");
     setResults([]);
     setError(null);
     setHasSearched(false);
     setIsLoading(false);
+
+    const params = new URLSearchParams({
+      lat: String(location.latitude),
+      lon: String(location.longitude),
+      region: location.region ?? "",
+      country: location.country ?? "",
+    });
+
+    router.push(`/dashboard?${params.toString()}`);
   }
 
   function handleClear() {
@@ -90,18 +102,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <header className="flex items-center justify-between px-6 py-5 sm:px-10">
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-lg font-semibold"
-        >
-          <CloudSun size={26} aria-hidden="true" />
-          <span>Aether</span>
-        </Link>
-
-        <ThemeSelector />
-      </header>
-
       <section className="mx-auto flex w-full max-w-5xl flex-col items-center px-6 pb-16 pt-16 sm:pt-24">
         <h1 className="text-center text-4xl font-bold tracking-tight sm:text-6xl">
           Aether
@@ -125,14 +125,6 @@ export default function Home() {
               onClear={handleClear}
               isLoading={isLoading}
             />
-
-            <button
-              type="button"
-              aria-label="Search location"
-              className="shrink-0 rounded-2xl border border-border bg-card p-3 text-muted-foreground transition-colors hover:bg-background hover:text-foreground"
-            >
-              <Search size={20} aria-hidden="true" />
-            </button>
 
             <button
               type="button"
