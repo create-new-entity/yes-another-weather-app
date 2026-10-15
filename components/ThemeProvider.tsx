@@ -28,7 +28,6 @@ function isTheme(value: string | null): value is Theme {
 function getStoredTheme(): Theme {
   try {
     const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-
     return isTheme(savedTheme) ? savedTheme : "system";
   } catch {
     return "system";
@@ -44,10 +43,6 @@ function applyTheme(theme: Theme, prefersDark: boolean) {
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("system");
 
-  useEffect(() => {
-    setThemeState(getStoredTheme());
-  }, []);
-
   const setTheme = useCallback((nextTheme: Theme) => {
     setThemeState(nextTheme);
 
@@ -58,8 +53,16 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }
 
     const prefersDark = window.matchMedia(SYSTEM_THEME_QUERY).matches;
-
     applyTheme(nextTheme, prefersDark);
+  }, []);
+
+  useEffect(() => {
+    const storedTheme = getStoredTheme();
+
+    setThemeState(storedTheme);
+
+    const prefersDark = window.matchMedia(SYSTEM_THEME_QUERY).matches;
+    applyTheme(storedTheme, prefersDark);
   }, []);
 
   useEffect(() => {
