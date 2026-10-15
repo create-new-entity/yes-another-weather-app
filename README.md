@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aether 🌦️
 
-## Getting Started
+A playful weather app featuring location search, current weather, forecasts, and an interactive 3D globe for picking locations.
 
-First, run the development server:
+**Live demo:** [weather.mdimranpavel.com](https://weather.mdimranpavel.com/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## How to use
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Search:** Find a location and view its weather.
+- **Explore:** Pick a point on the interactive globe and view the weather there.
+- **Switch themes:** Choose light, dark, or system theme.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Next.js, React, TypeScript
+- Tailwind CSS
+- `react-globe.gl`
+- Open-Meteo Weather and Geocoding APIs
 
-## Learn More
+## 🚨 Disclaimer
 
-To learn more about Next.js, take a look at the following resources:
+This project is AI slop. I chatted with AI, copy-pasted code, and here we are.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+It's a playful experiment, not a demonstration of clean code, good architecture, or Next.js/Tailwind CSS expertise. Just having fun with AI.
