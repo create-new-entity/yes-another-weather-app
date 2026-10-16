@@ -6,13 +6,17 @@ A playful weather app featuring location search, current weather, forecasts, and
 
 ### Contents
 
+- [Live Demo](#live-demo) 🏁
 - [How to use](#how-to-use) ❓
 - [Tech Stack](#tech-stack) 🛠️
-- [Live Demo](#live-demo) 🏁
 - [Demo GIFs](#demo-gifs) 📸
 - [Disclaimer](#disclaimer-) 🚨
 
 ---
+
+## Live Demo
+
+**You can check it out here:** [weather.mdimranpavel.com](https://weather.mdimranpavel.com/)
 
 ## How to use
 
@@ -26,10 +30,6 @@ A playful weather app featuring location search, current weather, forecasts, and
 - Tailwind CSS
 - `react-globe.gl`
 - Open-Meteo Weather and Geocoding APIs
-
-## Live Demo
-
-**You can check it out here:** [weather.mdimranpavel.com](https://weather.mdimranpavel.com/)
 
 ## Demo GIFs
 
